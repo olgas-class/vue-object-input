@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h2>Inserisci un nuovo prodotto</h2>
+        <label for="product-name">Nome</label>
+        <input type="text" id="product-name" v-model="newProduct.name">
+
+        <label for="product-price">Prezzo</label>
+        <input type="number" id="product-price" v-model="newProduct.price">
+
+        <button @click="addProduct">Aggiungi</button>
+      </div>
+      <ul>
+        <li v-for="(item) in products">{{item.name}} €{{item.price}}</li>
+      </ul>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
